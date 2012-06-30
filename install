@@ -19,3 +19,4 @@ debian/conf/*.template usr/share/foreman/templates
 debian/conf/settings.yaml etc/foreman
 debian/conf/database.yml etc/foreman
 debian/conf/email.yaml.example etc/foreman
+debian/external_node.rb.example /etc/foreman

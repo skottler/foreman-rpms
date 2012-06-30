@@ -1,8 +1,14 @@
+foreman (1.0-rc2-3) experimental; urgency=low
+
+  * Include external_node.rb sample to etc
+
+ -- Greg Sutcliffe <greg.sutcliffe@gmail.com>  Sat, 30 Jun 2012 04:07:00 +0100
+
 foreman (1.0-rc2-2) experimental; urgency=low
 
   * Version bump to test new file location
 
- -- Greg Sutcliffe <greg.sutcliffe@gmail.com>  Sat, 30 Jun 2012 12:21:00 +0100
+ -- Greg Sutcliffe <greg.sutcliffe@gmail.com>  Sat, 30 Jun 2012 00:21:00 +0100
 
 foreman (1.0-rc2-1) experimental; urgency=low
 
