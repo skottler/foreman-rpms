@@ -1,3 +1,16 @@
+foreman (1.0-rc3-2) experimental; urgency=low
+
+  * Strip back dependencies
+
+ -- Greg Sutcliffe <greg.sutcliffe@gmail.com>  Thu, 05 Jul 2012 21:56:23 +0100
+
+foreman (1.0-rc3-1) experimental; urgency=low
+
+  * 1.0 RC3 released
+  * First cut of split packages
+
+ -- Greg Sutcliffe <greg.sutcliffe@gmail.com>  Wed, 04 Jul 2012 22:34:08 +0100
+
 foreman (1.0-rc2-4) experimental; urgency=low
 
   * Include external_node.rb sample to etc

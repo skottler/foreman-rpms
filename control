@@ -1,5 +1,5 @@
 Source: foreman
-Maintainer: Jochen Schalanda <jochen@schalanda.name>
+Maintainer: Greg Sutcliffe <greg.sutcliffe@gmail.com>
 Section: web
 Priority: extra
 Standards-Version: 3.9.1
@@ -8,13 +8,11 @@ Homepage: http://www.theforeman.org/
 
 Package: foreman
 Architecture: all
-Pre-Depends: debconf
-Depends: ruby, ruby1.8 (>= 1.8.7), rubygems, ruby-dev, rubygems1.8 (>= 1.3.6), rake (>=0.8.4), ruby-bundler,
-         libxml2-dev, libxslt1-dev, libmysqlclient-dev, libpq-dev, libvirt-dev, libsqlite3-dev, git | git-core,
-         puppet (>=0.24.4), dbconfig-common, librestclient-ruby (>= 1.4.0), libjson-ruby, ${misc:Depends}
-Recommends: foreman-proxy, libvirt-ruby
-Suggests: thin | mongrel | httpd-cgi, libfcgi-ruby, libapache2-mod-passenger | libapache2-mod-fcgid, libvirt-bin
-Enhances: puppet
+Section: web
+Priority: extra
+Depends: rubygems1.8 | ruby1.9.1, ruby-bundler, git | git-core, puppet (>=0.24.4), rake (>=0.8.4), ${misc:Depends}
+#OLD Depends: ruby-dev, dbconfig-common, librestclient-ruby (>= 1.4.0), libjson-ruby # for reference
+Recommends: foreman-proxy
 Description: Systems management web interface
  Foreman is aimed to be a single address for all machines life cycle management.
  .
@@ -35,8 +33,9 @@ Description: Systems management web interface
 
 Package: foreman-mysql
 Architecture: all
-Pre-Depends: mysql-server, mysql-client | virtual-mysql-client
-Depends: foreman, libdbd-mysql-ruby, ${misc:Depends}
+Section: web
+Priority: extra
+Depends: foreman, libmysqlclient-dev, ${misc:Depends}
 Description: metapackage providing MySQL dependencies for Foreman
  This package only provides MySQL dependencies for Foreman, a
  flexible systems management web application. Install this
@@ -46,8 +45,9 @@ Description: metapackage providing MySQL dependencies for Foreman
 
 Package: foreman-pgsql
 Architecture: all
-Pre-Depends: postgresql, postgresql-client
-Depends: foreman, libdbd-pg-ruby, ${misc:Depends}
+Section: web
+Priority: extra
+Depends: foreman, libpq-dev, ${misc:Depends}
 Description: metapackage providing PostgreSQL dependencies for Foreman
  This package provides PostgreSQL dependencies for Foreman, a
  flexible systems management web application. Install this
@@ -57,10 +57,100 @@ Description: metapackage providing PostgreSQL dependencies for Foreman
 
 Package: foreman-sqlite3
 Architecture: all
-Depends: foreman, libdbd-sqlite3-ruby, sqlite3, ${misc:Depends}
+Section: web
+Priority: extra
+Depends: foreman, libsqlite3-dev , ${misc:Depends}
 Description: metapackage providing sqlite dependencies for Foreman
  This package provides sqlite dependencies for Foreman, a
  flexible systems management web application. Install this
  one if you want to use a SQLite database with Foreman.
+ .
+ The foreman package should be installed along with this package.
+
+Package: foreman-console
+Architecture: all
+Section: web
+Priority: extra
+Depends: foreman, ${misc:Depends}
+Description: metapackage providing console dependencies for Foreman
+ This package provides console dependencies for Foreman, a
+ flexible systems management web application.
+ .
+ The foreman package should be installed along with this package.
+
+Package: foreman-development
+Architecture: all
+Section: web
+Priority: extra
+Depends: foreman, ${misc:Depends}
+Description: metapackage providing development dependencies for Foreman
+ This package provides development dependencies for Foreman, a
+ flexible systems management web application.
+ .
+ The foreman package should be installed along with this package.
+
+Package: foreman-fog
+Architecture: all
+Section: web
+Priority: extra
+Depends: foreman, libxml2-dev, libxslt1-dev, ${misc:Depends}
+Description: metapackage providing fog dependencies for Foreman
+ This package provides fog dependencies for Foreman, a
+ flexible systems management web application.
+ .
+ The foreman package should be installed along with this package.
+
+Package: foreman-libvirt
+Architecture: all
+Section: web
+Priority: extra
+Depends: foreman, libvirt-dev, ${misc:Depends}
+Description: metapackage providing libvirt dependencies for Foreman
+ This package provides fog dependencies for Foreman, a
+ flexible systems management web application.
+ .
+ The foreman package should be installed along with this package.
+
+Package: foreman-mysql2
+Architecture: all
+Section: web
+Priority: extra
+Depends: foreman, libmysqlclient-dev, ${misc:Depends}
+Description: metapackage providing mysql2 dependencies for Foreman
+ This package provides mysql2 dependencies for Foreman, a
+ flexible systems management web application.
+ .
+ The foreman package should be installed along with this package.
+
+Package: foreman-ovirt
+Architecture: all
+Section: web
+Priority: extra
+Depends: foreman, ${misc:Depends}
+Description: metapackage providing ovirt dependencies for Foreman
+ This package provides ovirt dependencies for Foreman, a
+ flexible systems management web application.
+ .
+ The foreman package should be installed along with this package.
+
+Package: foreman-test
+Architecture: all
+Section: web
+Priority: extra
+Depends: foreman, ${misc:Depends}
+Description: metapackage providing test dependencies for Foreman
+ This package provides test dependencies for Foreman, a
+ flexible systems management web application.
+ .
+ The foreman package should be installed along with this package.
+
+Package: foreman-vmware
+Architecture: all
+Section: web
+Priority: extra
+Depends: foreman, ${misc:Depends}
+Description: metapackage providing vmware dependencies for Foreman
+ This package provides vmware dependencies for Foreman, a
+ flexible systems management web application.
  .
  The foreman package should be installed along with this package.

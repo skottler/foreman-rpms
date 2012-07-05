@@ -3,11 +3,13 @@
 #
 # see: dh_installdeb(1)
 
-set -e
-if [ ! -z "${DEBUG}" ]; then set -x; fi
+if [ ! -z "${DEBUG}" ]; then
+  set -x
+else
+  set -e
+fi
 
 . /usr/share/debconf/confmodule
-#. /usr/share/dbconfig-common/dpkg/postinst
 
 # if this script aborts with an error dpkg can hang if a debconf can 
 # hang if daemons have been started
@@ -30,24 +32,24 @@ chmod 755 '/var/lib/foreman/public/javascripts'
 chmod 755 '/var/lib/foreman/public/stylesheets'
 chmod 755 '/var/cache/foreman'
 
-# Database setup
-#dbc_generate_include='template:/etc/foreman/database.yml'
-#dbc_generate_include_owner='foreman:foreman'
-#dbc_generate_include_perms='640'
-#dbc_dbfile_owner='foreman:foreman'
-#dbc_dbfile_perms='0660'
-#
-#db_get foreman/database-type || true
-#DB_TYPE=${RET}
-#
-#if [ -n "${DB_TYPE}" ]; then
-#  dbc_generate_include_args="-o template_infile=/usr/share/foreman/templates/database-${DB_TYPE}.yml.template"
-#
-# dbc_go foreman $@
+# Install gems - run twice as the postinst makes no distinction between install or upgrade
+cd /usr/share/foreman
+if [ ! -z "${DEBUG}" ]; then
+  bundle install --path ./vendor/
+  bundle update
+else
+  bundle install --path ./vendor/ 2>&1 >/dev/null
+  bundle update 2>&1 >/dev/null
+fi
 
-  # initialize/migrate the database
-  su - foreman -s /bin/sh -c /usr/share/foreman/extras/dbmigrate >/dev/null 2>&1
-#fi
+# Run a db:migrate if the user has created a dbfile
+if [ -f /usr/share/foreman/config/database.yml ]; then
+  if [ ! -z "${DEBUG}" ]; then
+    su - foreman -s /bin/sh -c /usr/share/foreman/extras/dbmigrate
+  else
+    su - foreman -s /bin/sh -c /usr/share/foreman/extras/dbmigrate >/dev/null 2>&1
+  fi
+fi
 
 # Own all the core files
 chown -Rf foreman:foreman '/usr/share/foreman'
