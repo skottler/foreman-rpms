@@ -10,7 +10,8 @@ Package: foreman
 Architecture: all
 Section: web
 Priority: extra
-Depends: rubygems1.8 | ruby1.9.1, ruby-bundler, git | git-core, puppet (>=0.24.4), rake (>=0.8.4), ${misc:Depends}
+Depends: rubygems1.8 | ruby1.9.1, ruby-bundler, ruby1.8-dev | ruby1.9.1-dev,
+         git | git-core, puppet (>=0.24.4), rake (>=0.8.4), ${misc:Depends}
 #OLD Depends: ruby-dev, dbconfig-common, librestclient-ruby (>= 1.4.0), libjson-ruby # for reference
 Recommends: foreman-proxy
 Description: Systems management web interface
@@ -104,7 +105,7 @@ Package: foreman-libvirt
 Architecture: all
 Section: web
 Priority: extra
-Depends: foreman, libvirt-dev, ${misc:Depends}
+Depends: foreman, pkg-config, libvirt-dev, ${misc:Depends}
 Description: metapackage providing libvirt dependencies for Foreman
  This package provides fog dependencies for Foreman, a
  flexible systems management web application.
