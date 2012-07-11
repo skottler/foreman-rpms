@@ -1,6 +1,7 @@
 # Install the basic application files
 config/email.yaml.example                etc/foreman
 debian/settings.yaml                     etc/foreman
+debian/database.yml                      etc/foreman
 debian/external_node.rb.example          etc/foreman
 app                                      usr/share/foreman
 config                                   usr/share/foreman

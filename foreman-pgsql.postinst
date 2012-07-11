@@ -26,9 +26,9 @@ fi
 # Run a db:migrate if the user has created a dbfile
 if [ -f /usr/share/foreman/config/database.yml ]; then
   if [ ! -z "${DEBUG}" ]; then
-    su - foreman -s /bin/sh -c /usr/share/foreman/extras/dbmigrate
+    su - foreman -s /bin/sh -c /usr/share/foreman/extras/dbmigrate || true
   else
-    su - foreman -s /bin/sh -c /usr/share/foreman/extras/dbmigrate >/dev/null 2>&1
+    su - foreman -s /bin/sh -c /usr/share/foreman/extras/dbmigrate >/dev/null 2>&1 || true
   fi
 fi
 
