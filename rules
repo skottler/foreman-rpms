@@ -14,5 +14,4 @@ binary-install/foreman::
 	find debian/foreman -name '.git' -type d | xargs rm -rf
 	find debian/foreman -name '.svn' -type d | xargs rm -rf
 	# Mark scripts as executable
-	# Patch environments.rb - necessary since changing source format to 3.0 (native)
-	# patch -p0 debian/foreman/usr/share/foreman/config/environment.rb debian/patches/01_gem_dependencies.patch
+	patch -p0 debian/foreman/usr/share/foreman/Gemfile debian/patches/01_fix_git_gems.diff

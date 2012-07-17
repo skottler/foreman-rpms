@@ -1,3 +1,15 @@
+foreman (1.0-1) experimental; urgency=low
+
+  * Packages seem to work, releasing
+
+ -- Greg Sutcliffe <greg.sutcliffe@gmail.com>  Tue, 26 Jul 2012 22:06:00 +0100
+
+foreman (1.0-rc5-1) experimental; urgency=low
+
+  * Proper gem2deb'ed gem dependency packages
+
+ -- Greg Sutcliffe <greg.sutcliffe@gmail.com>  Tue, 17 Jul 2012 20:40:00 +0100
+
 foreman (1.0-rc3-2) experimental; urgency=low
 
   * Strip back dependencies
