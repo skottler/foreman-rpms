@@ -1,3 +1,9 @@
+foreman-proxy (1.0-rc2-1) unstable; urgency=low
+
+  * rc2 released
+
+ -- Greg Sutcliffe <greg.sutcliffe@gmail.com>  Wed, 18 Jul 2012 08:52:00 +0100
+
 foreman-proxy (1.0-rc1-5) unstable; urgency=low
 
   * Version bump to test packaging changes
