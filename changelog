@@ -1,8 +1,15 @@
-foreman-proxy (1.1-1) unstable; urgency=low
+foreman-proxy (1.0-2) unstable; urgency=low
 
-  * Depend on ruby-rake
+  * depend on rake again
 
- -- Greg Sutcliffe <greg.sutcliffe@gmail.com>  Sun, 24 Jun 2012 22:18:00 +0100
+ -- Greg Sutcliffe <greg.sutcliffe@gmail.com>  Sun, 31 Jul 2012 18:24:00 +0100
+
+foreman-proxy (1.0-1) unstable; urgency=low
+
+  * depend on ruby-rake
+
+ -- greg sutcliffe <greg.sutcliffe@gmail.com>  sun, 24 jun 2012 22:18:00 +0100
+
 foreman-proxy (1.0-rc1-4) unstable; urgency=low
 
   * Rework initscript
