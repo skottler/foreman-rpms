@@ -1,3 +1,15 @@
+foreman (1.0-2) experimental; urgency=low
+
+  * Add example database files
+
+ -- Greg Sutcliffe <greg.sutcliffe@gmail.com>  Thu, 02 Aug 2012 19:30:00 +0100
+
+foreman (1.0-1) experimental; urgency=low
+
+  * Packages seem to work, releasing
+
+ -- Greg Sutcliffe <greg.sutcliffe@gmail.com>  Tue, 26 Jul 2012 22:06:00 +0100
+
 foreman (1.0-rc3-2) experimental; urgency=low
 
   * Strip back dependencies

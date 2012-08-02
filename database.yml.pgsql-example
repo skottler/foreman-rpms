@@ -1,8 +1,10 @@
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
-  pool: 5
-  timeout: 5000
+  adapter: postgresql
+  username: foreman
+  database: foreman
+  password: password
+  host: localhost
+  encoding: unicode
 
 development:
   adapter: sqlite3
