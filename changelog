@@ -1,3 +1,9 @@
+foreman (1.0-7) experimental; urgency=low
+
+ * Restrict i18n version, ubuntu has 0.6 in repo
+
+ -- Greg Sutcliffe <greg.sutcliffe@gmail.com>  Thu, 02 Aug 2012 19:30:00 +0100
+
 foreman (1.0-6) experimental; urgency=low
 
   * Restrict erubis version, ubuntu has 2.7 in repo
