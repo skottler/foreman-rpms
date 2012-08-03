@@ -119,7 +119,7 @@ Architecture: all
 Section: web
 Priority: extra
 Depends: foreman,
-         ruby-sqlite3 (=1.3.4-1),
+         ruby-sqlite3,
          ${misc:Depends}
 Description: metapackage providing sqlite dependencies for Foreman
  This package provides sqlite dependencies for Foreman, a
