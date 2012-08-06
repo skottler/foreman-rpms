@@ -1,3 +1,10 @@
+foreman (1.0-12) experimental; urgency=low
+
+  * Revert to old packaging style due to horrible conflicts in Ubuntu
+  * High version number to increase over attempted Ubuntu fixes
+
+ -- Greg Sutcliffe <greg.sutcliffe@gmail.com>  Thu, 06 Aug 2012 22:33:00 +0100
+
 foreman (1.0-2) experimental; urgency=low
 
   * Add example database files
